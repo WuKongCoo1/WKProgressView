@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ReN-0W-tHn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="81W-zp-NLb">
+            <objects>
+                <tableViewController id="W4T-Fo-nXy" customClass="ViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PYm-Ql-euN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="GrP-Tj-Vyw">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GrP-Tj-Vyw" id="D6x-Vm-DWT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="W4T-Fo-nXy" id="hEZ-8n-FNV"/>
+                            <outlet property="delegate" destination="W4T-Fo-nXy" id="kvV-D8-kg8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="hCV-tK-TNU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A4y-ta-WDB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="855" y="-217"/>
+        </scene>
+        <!--Arc View Controller-->
+        <scene sceneID="qlm-Jg-RQH">
+            <objects>
+                <viewController storyboardIdentifier="ArcViewController" id="Jp0-wb-PC0" customClass="ArcViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yaL-Ip-KQd"/>
+                        <viewControllerLayoutGuide type="bottom" id="lBM-di-S6v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a36-2Q-kyh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ypo-t3-8Ka" customClass="ArcProgressView">
+                                <rect key="frame" x="77" y="223.5" width="220" height="220"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="8Vx-Lq-jiP"/>
+                                    <constraint firstAttribute="width" constant="220" id="caB-be-G7J"/>
+                                </constraints>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PAX-9e-T3Y">
+                                <rect key="frame" x="50.5" y="598" width="274" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="4as-Cy-VCO"/>
+                                    <constraint firstAttribute="height" constant="30" id="cKm-z4-rU6"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="slider:" destination="Jp0-wb-PC0" eventType="valueChanged" id="gog-9G-921"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ypo-t3-8Ka" firstAttribute="centerX" secondItem="a36-2Q-kyh" secondAttribute="centerX" id="2MO-u8-uk8"/>
+                            <constraint firstItem="ypo-t3-8Ka" firstAttribute="centerY" secondItem="a36-2Q-kyh" secondAttribute="centerY" id="B9i-46-BbA"/>
+                            <constraint firstItem="lBM-di-S6v" firstAttribute="top" secondItem="PAX-9e-T3Y" secondAttribute="bottom" constant="39" id="eS4-uF-q98"/>
+                            <constraint firstItem="PAX-9e-T3Y" firstAttribute="centerX" secondItem="a36-2Q-kyh" secondAttribute="centerX" id="vJr-Uf-qM2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="ypo-t3-8Ka" id="lK6-pz-4gj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LaY-x4-ng9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1661.5999999999999" y="-219.04047976011995"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HLf-Pk-DEV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ReN-0W-tHn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T8a-bU-yGJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="W4T-Fo-nXy" kind="relationship" relationship="rootViewController" id="kka-tK-Jvw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ov0-FN-Ond" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168.80000000000001" y="-217.24137931034485"/>
+        </scene>
+        <!--Arc With Track View Controller-->
+        <scene sceneID="mPA-Rc-Xl4">
+            <objects>
+                <viewController storyboardIdentifier="ArcWithTrackViewController" id="4Ne-Og-2E5" customClass="ArcWithTrackViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aOe-wl-S0q"/>
+                        <viewControllerLayoutGuide type="bottom" id="U0A-FW-ydd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Omb-0j-Qmk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I37-Gt-g6H" customClass="ArcWithTrackProgressView">
+                                <rect key="frame" x="77" y="223.5" width="220" height="220"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="Ff9-W6-Th9"/>
+                                    <constraint firstAttribute="width" constant="220" id="lld-hm-4dZ"/>
+                                </constraints>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="W9G-PL-fHC">
+                                <rect key="frame" x="50.5" y="598" width="274" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="C5B-Tp-fZX"/>
+                                    <constraint firstAttribute="width" constant="270" id="bnO-4X-abf"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderAction:" destination="4Ne-Og-2E5" eventType="valueChanged" id="te3-bN-3fB"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I37-Gt-g6H" firstAttribute="centerX" secondItem="Omb-0j-Qmk" secondAttribute="centerX" id="TQ5-Ot-nRL"/>
+                            <constraint firstItem="U0A-FW-ydd" firstAttribute="top" secondItem="W9G-PL-fHC" secondAttribute="bottom" constant="39" id="hgl-6z-TU7"/>
+                            <constraint firstItem="W9G-PL-fHC" firstAttribute="centerX" secondItem="Omb-0j-Qmk" secondAttribute="centerX" id="ove-vu-I0v"/>
+                            <constraint firstItem="I37-Gt-g6H" firstAttribute="centerY" secondItem="Omb-0j-Qmk" secondAttribute="centerY" id="zrM-kz-GEQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="I37-Gt-g6H" id="lZ4-Yn-sXK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="apt-6K-Mo8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2326" y="-219"/>
+        </scene>
+        <!--Annular View Controller-->
+        <scene sceneID="Hz7-D4-Qxy">
+            <objects>
+                <viewController storyboardIdentifier="AnnularViewController" id="Ie3-zD-71Q" customClass="AnnularViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YIL-jT-nKd"/>
+                        <viewControllerLayoutGuide type="bottom" id="cPa-Rf-Q1t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8pF-aH-uIs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9b-Ik-CKk" customClass="AnnularProgressView">
+                                <rect key="frame" x="77" y="223.5" width="220" height="220"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="ACb-tS-eE2"/>
+                                    <constraint firstAttribute="width" constant="220" id="sdE-WI-LeL"/>
+                                </constraints>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GoM-z1-G0R">
+                                <rect key="frame" x="50.5" y="598" width="274" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="M2e-rs-qOi"/>
+                                    <constraint firstAttribute="width" constant="270" id="yeK-tk-F64"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="slideAction:" destination="Ie3-zD-71Q" eventType="valueChanged" id="2XN-7T-JbP"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GoM-z1-G0R" firstAttribute="centerX" secondItem="8pF-aH-uIs" secondAttribute="centerX" id="08I-uG-EbZ"/>
+                            <constraint firstItem="d9b-Ik-CKk" firstAttribute="centerX" secondItem="8pF-aH-uIs" secondAttribute="centerX" id="XlQ-mn-Sq3"/>
+                            <constraint firstItem="d9b-Ik-CKk" firstAttribute="centerY" secondItem="8pF-aH-uIs" secondAttribute="centerY" id="n7Y-oX-Ilt"/>
+                            <constraint firstItem="cPa-Rf-Q1t" firstAttribute="top" secondItem="GoM-z1-G0R" secondAttribute="bottom" constant="39" id="o7V-GA-W7n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="d9b-Ik-CKk" id="tLH-CN-rXb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XVL-rQ-2cY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3063" y="-219"/>
+        </scene>
+        <!--Wave View Controller-->
+        <scene sceneID="a4s-LF-wRv">
+            <objects>
+                <viewController storyboardIdentifier="WaveViewController" id="zWk-4O-le3" customClass="WaveViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hMe-R5-TbE"/>
+                        <viewControllerLayoutGuide type="bottom" id="NME-0e-e9Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jhr-GN-10k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ktf-Um-MHv" customClass="WaveProgressView">
+                                <rect key="frame" x="77" y="223.5" width="220" height="220"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="KdO-TQ-qoW"/>
+                                    <constraint firstAttribute="height" constant="220" id="oqT-NN-e9Z"/>
+                                </constraints>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8LS-k1-RWF">
+                                <rect key="frame" x="50.5" y="598" width="274" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="N6m-u8-2Og"/>
+                                    <constraint firstAttribute="width" constant="270" id="bTP-se-gBq"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="slideAction:" destination="zWk-4O-le3" eventType="valueChanged" id="MFK-nx-Ia3"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NME-0e-e9Z" firstAttribute="top" secondItem="8LS-k1-RWF" secondAttribute="bottom" constant="39" id="2l7-Bd-VT2"/>
+                            <constraint firstItem="Ktf-Um-MHv" firstAttribute="centerX" secondItem="jhr-GN-10k" secondAttribute="centerX" id="eoH-Qs-NnJ"/>
+                            <constraint firstItem="Ktf-Um-MHv" firstAttribute="centerY" secondItem="jhr-GN-10k" secondAttribute="centerY" id="sAL-QD-7Sf"/>
+                            <constraint firstItem="8LS-k1-RWF" firstAttribute="centerX" secondItem="jhr-GN-10k" secondAttribute="centerX" id="yHW-D8-aWm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="Ktf-Um-MHv" id="RIc-rQ-fMa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WaI-2K-0yX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3748" y="-219"/>
+        </scene>
+    </scenes>
+</document>
