@@ -32,18 +32,17 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetLineWidth(context, 0.5);
     CGContextAddPath(context, trackPath.CGPath);
-    CGContextSaveGState(context);
+    
     [self.trackColor setStroke];
-    
     CGContextDrawPath(context, kCGPathStroke);
+
     
-    CGContextRestoreGState(context);
     //绘制进度
     [self.progressColor setFill];
     CGFloat startAngle = - M_PI_2;
     CGFloat endAngle = self.progress * 2 * M_PI + startAngle;
     CGPoint center = CGPointMake(CGRectGetWidth(rect) / 2, CGRectGetHeight(rect) / 2);
-    CGFloat radius = CGRectGetHeight(rect) / 2 - 4;
+    CGFloat radius = CGRectGetHeight(rect) / 2 - 6;//设置半径
     UIBezierPath *progressPath = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
     
     CGContextAddPath(context, progressPath.CGPath);

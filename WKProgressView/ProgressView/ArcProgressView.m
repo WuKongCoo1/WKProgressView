@@ -21,7 +21,7 @@
 
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
-    NSLog(@"111");
+
     CGContextRef context = UIGraphicsGetCurrentContext();
    
     [self.arcColor setFill];
